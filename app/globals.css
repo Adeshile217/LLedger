@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 35 92% 33%;
+    --primary-foreground: 35 40% 98%;
+
+    --secondary: 220 60% 40%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 30 10% 96%;
+    --muted-foreground: 30 10% 40%;
+
+    --accent: 350 80% 45%;
+    --accent-foreground: 350 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 10% 90%;
+    --input: 30 10% 90%;
+    --ring: 35 92% 33%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 30 10% 10%;
+    --foreground: 30 10% 98%;
+
+    --card: 30 10% 12%;
+    --card-foreground: 30 10% 98%;
+
+    --popover: 30 10% 12%;
+    --popover-foreground: 30 10% 98%;
+
+    --primary: 35 92% 50%;
+    --primary-foreground: 35 40% 10%;
+
+    --secondary: 220 60% 50%;
+    --secondary-foreground: 210 40% 10%;
+
+    --muted: 30 10% 20%;
+    --muted-foreground: 30 10% 60%;
+
+    --accent: 350 80% 55%;
+    --accent-foreground: 350 40% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 10% 25%;
+    --input: 30 10% 25%;
+    --ring: 35 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.section-divider {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700;
+}
+
+.hero-gradient {
+  @apply bg-gradient-to-b from-amber-50 via-white to-white;
+}
+
+.music-gradient {
+  @apply bg-gradient-to-b from-amber-50 via-amber-100 to-amber-50;
+}
+
+.press-gradient {
+  @apply bg-gradient-to-b from-denim-50 via-white to-white;
+}
+
+.shows-gradient {
+  @apply bg-gradient-to-b from-forest-50 via-white to-white;
+}
+
+.contact-gradient {
+  @apply bg-gradient-to-b from-rustic-50 via-white to-white;
+}
+
+.quote-card {
+  @apply relative overflow-hidden;
+}
+
+.quote-card::before {
+  content: "";
+  @apply absolute -top-2 -left-2 text-8xl opacity-10 font-serif text-accent;
+}
+
+.album-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-amber-200;
+}
+
+.album-card img {
+  @apply transition-all duration-500;
+}
+
+.album-card:hover img {
+  @apply scale-105;
+}
+
+.show-card {
+  @apply transition-all duration-300 hover:border-primary hover:shadow-md;
+}
+
+.social-button {
+  @apply transition-all duration-300 hover:scale-110;
+}
